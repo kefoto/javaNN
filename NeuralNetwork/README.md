@@ -16,9 +16,9 @@ To build the main class, you can recompile the class by directory in the folder:
 
 	javac javac nn/*.java math/util/*.java Main.java
 
-To Run nn: java nn/Main.java [Mode] [epochs/steps]
+To Run nn: java Main.java [Mode] [epochs/steps]
 
-	Mode: 0 -> iris data set, 1 -> MNIST data set
+Mode: 0 -> iris data set, 1 -> MNIST data set
 
 
 There are a lot of things to improve on: I would create a reading and outputting data interface with methods so I can apply them to different data sets. I would also improve the bias since no additional weight is attached to each layer. I should also create training set divisions and introduce generations.
