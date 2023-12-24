@@ -1,14 +1,14 @@
 Neural Network Java Implementation
 Ke Xu - kxu27@u.rochester.edu
 
-Note: When building the neural network, 3Blue1Brown's video helped me a lot: https://www.youtube.com/watch?v=Ilg3gGewQ5U&ab_channel=3Blue1Brown. I was struggling on why the accuracy of the iris dataset is 0.33 with one lay of 3 nodes. As I crank up the layer size from 3 to 7 to 100, the accuracy improved significantly. Hence I made one layer of 100 nodes as default for the iris dataSet. (I might over-complicates the model). When searching for the MNIST, I found a csv version that provided label first and input second to create a simple reading function. Since this set is different from iris, I have to create different data reader, transformation, and file writer (essentially a different train function. Why? Because I can train method with randomized smaller sample and write files during each step but not record data in a fibinoacci run time).
+Note: When building the neural network, 3Blue1Brown's video helped me greatly: https://www.youtube.com/watch?v=Ilg3gGewQ5U&ab_channel=3Blue1Brown. I was struggling with why the accuracy of the iris dataset is 0.33 with one lay of 3 nodes. As I cranked up the layer size from 3 to 7 to 100, the accuracy improved significantly. Hence I made one layer of 100 nodes as default for the iris dataSet. (I might over-complicate the model). When searching for the MNIST, I found a CSV version that provided a label first and input second to create a simple reading function (https://www.kaggle.com/datasets/oddrationale/mnist-in-csv). Since this set is different from the iris, I have to create different data reader, transformation, and file writer (essentially a different train function. Why? Because I can train the method with randomized smaller samples and write files during each step but not record data in a Fibonacci run time).
 
 
-When running the main, the system provides a quick sample print of the nn and also writes the accuracy data into file: nn_graph_data.txt. Hence, I can take those data into Excel and provide report graph.
+When running the main, the system provides a quick sample print of the nn and writes the accuracy data into the file: nn_graph_data.txt. Hence, I can take those data into Excel and provide a report graph.
 
 
 There are some assumed default attributes for nn:
-	For neuron network, iris dataset has a layer of 100, MNIST has a layer of 300 and 800. Iris can provide sample overview, but MNIST only focus on providing the graph. To optimize run time and getting efficient overview for MNIST, I implemented random sampling of training and testing set. The size of training and testing set are 5000 and 2500. The writing the accuracy increment is 2 by default to minimize run time. The learning rate are assumed decay rate. 
+	For the neural network, the iris dataset has a layer of 100, and MNIST has a layer of 300 and 800. Iris can provide a sample overview, but MNIST only focuses on providing the graph. To optimize run time and get an efficient overview for MNIST, I implemented random sampling of training and testing sets. The size of the training and testing sets are 5000 and 2500. The writing accuracy increment is 2 by default to minimize run time. The learning rate is assumed decay rate. 
 
 Those are the attributes that can be edited in those files.
 
@@ -21,7 +21,7 @@ To Run nn: java nn/Main.java [Mode] [epochs/steps]
 	Mode: 0 -> iris data set, 1 -> MNIST data set
 
 
-There are definitely a lot of thing to improve on: I would create a reading and outputting data interface with methods so I can apply them on different data sets. I would also improve the bias, since there is no additional weight attached to each layer. I should also create training set divisions and introduce generations.
+There are a lot of things to improve on: I would create a reading and outputting data interface with methods so I can apply them to different data sets. I would also improve the bias since no additional weight is attached to each layer. I should also create training set divisions and introduce generations.
 
 
 --------------------------------------------------
